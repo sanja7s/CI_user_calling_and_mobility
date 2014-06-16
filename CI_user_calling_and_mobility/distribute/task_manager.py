@@ -32,6 +32,6 @@ def distribute_task(data1, data2):
 #######################################################################################      
 # this part is for saving  the data, after you learned them from playing
 #######################################################################################  
-#     ucm.save_data(data2)
+    ucm.save_data(data2)
         
     return data1, data2
