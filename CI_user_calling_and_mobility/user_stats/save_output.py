@@ -4,7 +4,6 @@ Created on Jun 16, 2014
 @author: sscepano
 '''
 from os.path import join
-from collections import defaultdict
 
 #######################################################################################      
 # this is where we save the extracted data needed for the next steps to .TSV files
