@@ -3,7 +3,7 @@ Created on Jun 16, 2014
 
 @author: sscepano
 '''
-from collections import defaultdict, OrderedDict
+from collections import defaultdict
 
 #######################################################################################      
 # this one is for calling other functions needed with the data

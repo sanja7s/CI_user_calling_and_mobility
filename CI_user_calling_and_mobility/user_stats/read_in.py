@@ -26,8 +26,7 @@ def read_in_all_multiprocessing():
 
 def read_in_home_work(c, data):
     
-    print "Read data started for " + c
-    
+    print "Read data started for " + c  
     # lines read in
     i = 0
     

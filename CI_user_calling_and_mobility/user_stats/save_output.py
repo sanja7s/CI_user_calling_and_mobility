@@ -34,6 +34,5 @@ def save_user_stats(data):
         f.write(str(data[user]['fq']) + '\t' + str(sum(data[user]['subpref'].values())))
 #             f2.write(str(subpref) + '\t') 
         f.write('\n')
-#         f2.write('\n')
-           
+#         f2.write('\n')          
     return
