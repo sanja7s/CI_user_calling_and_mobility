@@ -10,7 +10,7 @@ from itertools import repeat
 
 # function for multithread support
 def f((data, i)):
-    data = read_in_home_work(i, data)
+    data = read_in_fq_distinct_places(i, data)
     return data
 
 # function to read A ... Z files in parallel
@@ -24,7 +24,7 @@ def read_in_all_multiprocessing():
     
     return data2
 
-def read_in_home_work(c, data):
+def read_in_fq_distinct_places(c, data):
     
     print "Read data started for " + c  
     # lines read in
