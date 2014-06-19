@@ -4,6 +4,9 @@ Created on June 16, 2014
 @author: sscepano
 '''
 # This one serves for the starting point 
+#####################################################
+# for all set of tasks, no need to change me
+#####################################################
 import logging
 import traceback
 import multiprocessing

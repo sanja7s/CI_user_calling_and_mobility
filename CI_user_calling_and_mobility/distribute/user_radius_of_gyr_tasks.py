@@ -3,13 +3,13 @@ Created on Jun 16, 2014
 
 @author: sscepano
 '''
-import user_stats.read_in_fq_dist_pl as rd
-import user_stats.save_output_fq_dist as so
+import user_stats.read_in_radius_gyr as rd
+import user_stats.save_radius_gyr as so
 # import user_stats.map_output as mo
-import user_stats.play_data as pd 
+import user_stats.play_data_radius_gyr as pd 
 
 #######################################################################################      
-# the functions to be called by the distributor -- task manager
+# the functions to be called by the distributor -- task manager, specific for a set of tasks
 #######################################################################################   
 def read_data():
     
@@ -41,7 +41,7 @@ def save_data(data):
     except Exception as e:
         print e
             
-    so.save_user_stats(data) 
+    so.save_radius_gyr(data) 
 
 
     
