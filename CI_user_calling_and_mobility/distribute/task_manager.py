@@ -7,7 +7,6 @@ Created on Jun 9, 2014
 ### distributes tasks, here all you need is to comment / uncomment lines below
 #######################################################################################
 
-
 #######################################################################################
 ### here you have tasks for 1: fq and dist places etc., just uncomment
 #######################################################################################
@@ -16,7 +15,12 @@ Created on Jun 9, 2014
 #######################################################################################
 ### here you have tasks for 2: radius of gyr, just uncomment, and comment previous, etc.
 #######################################################################################
-from distribute import user_radius_of_gyr_tasks as u
+# from distribute import user_radius_of_gyr_tasks as u
+
+#######################################################################################
+### here you have tasks for 3: user trajectory, just uncomment, and comment previous, etc.
+#######################################################################################
+from distribute import user_traj_tasks as u
 
 def distribute_task(data1, data2):
     
