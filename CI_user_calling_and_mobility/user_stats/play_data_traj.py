@@ -27,14 +27,16 @@ def sum_multitasking_output(data):
     
         usr_traj_SUM = defaultdict(int)
         usr_day_SUM = defaultdict(int)
+        usr_total_traj_SUM = defaultdict(int)
         
         for i in range(10):
             
-            usr_traj, usr_day, usr_traj_today = data[i][0], data[i][1], data[i][2]
+            usr_traj, usr_day, usr_traj_today, usr_total_traj = data[i][0], data[i][1], data[i][2], data[i][3]
             
             for user in usr_traj.keys():
                 usr_traj_SUM[user] += usr_traj[user]
                 usr_day_SUM[user] += usr_day[user][1]
+                usr_total_traj_SUM[user] += usr_total_traj[user]
                     
         for usr in range(500001):
             if usr_day_SUM[usr] > 0:
@@ -43,4 +45,4 @@ def sum_multitasking_output(data):
     else:
         print "DID NOTHING in multitasking, as the data seems to be already summed"
     
-    return (avg_usr_traj, usr_traj_SUM, usr_day_SUM)
+    return (avg_usr_traj, usr_traj_SUM, usr_day_SUM, usr_total_traj_SUM)

@@ -24,11 +24,12 @@ def read_in_all_multiprocessing():
     usr_traj = defaultdict(int)
     usr_day = defaultdict(int)
     usr_traj_today = defaultdict(int)
+    usr_total_traj = defaultdict(int)
     for i in range(500001):
         usr_day[i] = defaultdict(int)
         usr_traj_today[i] = defaultdict(int)
       
-    data = (usr_traj, usr_day, usr_traj_today)
+    data = (usr_traj, usr_day, usr_traj_today, usr_total_traj)
  
     print "Read data USING POOL started"
     p = Pool(processes=10)         
@@ -41,7 +42,8 @@ def read_in_all_multiprocessing():
 # we want avg traveled dist on daily basis
 def read_in_file_avg_daily_traj(c, data):
     
-    usr_traj, usr_day, usr_traj_today = data[0], data[1], data[2]
+    usr_traj, usr_day, usr_traj_today, usr_total_traj = data[0], data[1], data[2], data[3]
+    old_loc = 0
     
     subpref_dist = find_subpref_distance()
     i = 0
@@ -68,6 +70,7 @@ def read_in_file_avg_daily_traj(c, data):
                     usr_traj_today[usr][0] += subpref_dist[old_loc,subpref]
                     usr_traj_today[usr][1] = subpref
                     #print usr_traj_today[usr][1], usr_traj_today[usr][0]
+                    usr_total_traj[usr] += subpref_dist[old_loc,subpref]
                 else:
                     #print usr_traj_today[usr][0]
                     usr_day[usr][1] += 1
@@ -76,9 +79,11 @@ def read_in_file_avg_daily_traj(c, data):
                     usr_traj_today[usr][1] = subpref
                     usr_traj_today[usr][0] = 0
                     #print
+                    if old_loc <> 0:
+                        usr_total_traj[usr] += subpref_dist[old_loc,subpref]
     
     print i            
-    return (usr_traj, usr_day, usr_traj_today)
+    return (usr_traj, usr_day, usr_traj_today, usr_total_traj)
 
 
 
