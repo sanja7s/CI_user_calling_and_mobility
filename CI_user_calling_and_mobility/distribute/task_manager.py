@@ -23,9 +23,14 @@ Created on Jun 9, 2014
 # from distribute import user_traj_tasks as u
 
 #######################################################################################
-### here you have tasks for 3: user trajectory, just uncomment, and comment previous, etc.
+### here you have tasks for 4: peaks in calls, just uncomment, and comment previous, etc.
 #######################################################################################
-from distribute import call_timing_tasks as u
+# from distribute import call_timing_tasks as u
+
+#######################################################################################
+### here you have tasks for 5: user trajectory, just uncomment, and comment previous, etc.
+#######################################################################################
+from distribute import call_wakeup_sleep_hour_tasks as u
 
 def distribute_task(data1, data2):
     
@@ -38,10 +43,10 @@ def distribute_task(data1, data2):
 # this part is for reading in the data; comment out after the first step 
 ### (should work without commenting also)
 #######################################################################################   
-#     if data1 is None:
-#         print "Read data started"
-#         data1 = u.read_data()
-#         print "Read data finished"
+    if data1 is None:
+        print "Read data started"
+        data1 = u.read_data()
+        print "Read data finished"
         
 #######################################################################################      
 # this part is for playing with the data, so testing & arranging them as needed
